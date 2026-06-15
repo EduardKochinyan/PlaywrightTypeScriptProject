@@ -1,0 +1,21 @@
+# IDE and editor settings
+.claude/
+.vscode/
+.idea/
+
+# Dependencies
+node_modules/
+
+# Playwright output
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+/playwright-framework/playwright-report/
+/playwright-framework/test-results/
+/playwright-framework/allure-results/
+/playwright-framework/allure-report/
+/allure-results/
+/allure-report/
+/screenshots/

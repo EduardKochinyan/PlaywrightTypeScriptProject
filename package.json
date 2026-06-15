@@ -1,0 +1,38 @@
+{
+  "devDependencies": {
+    "@faker-js/faker": "^10.4.0",
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.1",
+    "@types/prompts": "^2.4.9",
+    "allure-playwright": "^3.9.0",
+    "dotenv": "^16.4.5",
+    "dotenv-cli": "^11.0.0",
+    "prompts": "^2.4.2",
+    "tsx": "^4.22.4",
+    "typescript": "^5.7.3"
+  },
+  "scripts": {
+    "start": "npm install && npx playwright install && playwright test --config=playwright-framework/playwright.config.ts",
+    "test": "playwright test --config=playwright-framework/playwright.config.ts",
+    "test:ui": "playwright test --config=playwright-framework/playwright.config.ts --project=ui-chrome",
+    "test:api": "playwright test --config=playwright-framework/playwright.config.ts --project=api",
+    "test:headed": "playwright test --config=playwright-framework/playwright.config.ts --project=ui-chrome --headed",
+    "test:report": "playwright show-report playwright-framework/playwright-report",
+    "test:login": "playwright test --config=playwright-framework/playwright.config.ts playwright-framework/tests/ui/login.spec.ts --project=ui-chrome",
+    "test:cart": "playwright test --config=playwright-framework/playwright.config.ts playwright-framework/tests/ui/cart.spec.ts --project=ui-chrome",
+    "test:checkout": "playwright test --config=playwright-framework/playwright.config.ts playwright-framework/tests/ui/checkout.spec.ts --project=ui-chrome",
+    "test:mainpage": "playwright test --config=playwright-framework/playwright.config.ts playwright-framework/tests/ui/mainpage.spec.ts --project=ui-chrome",
+    "test:navigation": "playwright test --config=playwright-framework/playwright.config.ts playwright-framework/tests/ui/navigation.spec.ts --project=ui-chrome",
+    "test:broken-users": "playwright test --config=playwright-framework/playwright.config.ts playwright-framework/tests/ui/broken-users.spec.ts --project=ui-chrome",
+    "test:broken-users:baseline": "playwright test --config=playwright-framework/playwright.config.ts playwright-framework/tests/ui/broken-users.spec.ts --project=ui-chrome --update-snapshots --grep \"Standard User Layout\"",
+    "test:broken-users:update": "playwright test --config=playwright-framework/playwright.config.ts playwright-framework/tests/ui/broken-users.spec.ts --project=ui-chrome --update-snapshots",
+    "test:product": "playwright test --config=playwright-framework/playwright.config.ts playwright-framework/tests/ui/product.spec.ts --project=ui-chrome",
+    "test:filtering": "playwright test --config=playwright-framework/playwright.config.ts playwright-framework/tests/api/filtering.spec.ts --project=api",
+    "test:crud": "playwright test --config=playwright-framework/playwright.config.ts playwright-framework/tests/api/crud.spec.ts --project=api",
+    "test:auth": "playwright test --config=playwright-framework/playwright.config.ts playwright-framework/tests/api/auth.spec.ts --project=api",
+    "test:validation": "playwright test --config=playwright-framework/playwright.config.ts playwright-framework/tests/api/validation.spec.ts --project=api",
+    "test:staging": "dotenv -e playwright-framework/config/.env.staging -- playwright test --config=playwright-framework/playwright.config.ts",
+    "test:production": "dotenv -e playwright-framework/config/.env.production -- playwright test --config=playwright-framework/playwright.config.ts",
+    "menu": "tsx scripts/menu.ts"
+  }
+}
